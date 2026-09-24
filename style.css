@@ -1,4 +1,4 @@
-/* Reseta estilos padrões */
+/* Seletor Universal */
 * {
     margin: 0;
     padding: 0;
@@ -95,6 +95,7 @@ footer {
     margin-top: 24px;
 }
 
+/* Seletor de Classe */
 .card {
     background-color: #1a1a1a;
     border: 1px solid #333;
@@ -183,7 +184,7 @@ footer {
     padding: 24px 0;
 }
 
-/* Fotos usando as imagens de fundo do CSS do mesmo jeito do professor */
+/* Fotos*/
 #foto-entrada {
     background-image: url("entrada.jpg");
 }
@@ -196,6 +197,7 @@ footer {
     background-image: url("sobremesa.jpg");
 }
 
+/*FORMULÁRIO DE RESERVAS*/
 .formulario {
     max-width: 600px;
     margin: 20px auto 0 auto;
@@ -256,6 +258,7 @@ footer {
     background-color: #e0b86c;
 }
 
+/*Seletor Compartilhada*/
 h1, h2, h3 {
     font-family: Georgia, 'Times New Roman', serif;
     color: #c5a059;
