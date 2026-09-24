@@ -196,8 +196,6 @@ footer {
     background-image: url("sobremesa.jpg");
 }
 
-/* --- ESTILO DO FORMULÁRIO DE RESERVAS --- */
-
 .formulario {
     max-width: 600px;
     margin: 20px auto 0 auto;
@@ -241,24 +239,6 @@ footer {
     border-color: #c5a059;
 }
 
-.entrada:focus {
-    outline: none;
-    border-color: #c5a059;
-}
-
-.botao-enviar {
-    width: 100%;
-    padding: 14px;
-    background-color: #c5a059;
-    color: #121212;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 .botao-enviar {
     width: 100%;
     padding: 14px;
@@ -274,4 +254,9 @@ footer {
 
 .botao-enviar:hover {
     background-color: #e0b86c;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #c5a059;
 }
