@@ -195,3 +195,83 @@ footer {
 #foto-sobremesa {
     background-image: url("sobremesa.jpg");
 }
+
+/* --- ESTILO DO FORMULÁRIO DE RESERVAS --- */
+
+.formulario {
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo-duplo {
+    display: flex;
+    gap: 15px;
+}
+
+.campo-duplo .campo {
+    flex: 1;
+}
+
+.rotulo {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c5a059;
+    margin-bottom: 8px;
+}
+
+.entrada {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #121212;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.entrada:focus {
+    outline: none;
+    border-color: #c5a059;
+}
+
+.entrada:focus {
+    outline: none;
+    border-color: #c5a059;
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 14px;
+    background-color: #c5a059;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 14px;
+    background-color: #c5a059;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao-enviar:hover {
+    background-color: #e0b86c;
+}

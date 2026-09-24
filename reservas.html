@@ -20,47 +20,50 @@
         <br>
     </header>
 
-     <main id="reservas">
-        <h2>Reserve a sua mesa e aproveita sua experiência!</h2>
-        <form action="#" method="post">
-            <label for="Nome">Nome Completo</label>
-            <input type="text" name="Nome" id="Nome" required>
-            <br>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="telefone">Telefone</label>
-            <input 
-            type="tel" 
-            name="telefone"
-             id="telefone" 
-             required
-             inputmode="numeric"
-             maxlength="15"
-             pattern="(?:\(?[1-9]{2}\)?\s?)?(?:9\d{4}|\d{4})-?\d{4}"
-             title="Digite com DDD. Ex: (17) 98765-4321 ou 179817654321"
-             >
-            <br>
-            <label for="data">Data:</label>
-            <input type="date" name="data" id="data" required>
-            <br>
-            <label for="hora">Horário:</label>
-            <input type="time" name="hora" id="hora" required>
-            <br>
-            <label for="lugares">Quantos lugares deixava:</label>
-            <select name="lugares" id="lugares" required  >
+     <section id="reservas">
+    <h2>Reserve a sua mesa e aproveite sua experiência!</h2>
+    
+    <form action="#" method="POST" class="formulario">
+        <div class="campo">
+            <label for="nome" class="rotulo">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" class="entrada" placeholder="Seu nome completo">
+        </div>
+
+        <div class="campo">
+            <label for="email" class="rotulo">Email:</label>
+            <input type="email" id="email" name="email" class="entrada" placeholder="seu@email.com">
+        </div>
+
+        <div class="campo">
+            <label for="telefone" class="rotulo">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" class="entrada" placeholder="(17) 99999-9999">
+        </div>
+
+        <!-- Data e Hora em caixas lado a lado -->
+        <div class="campo-duplo">
+            <div class="campo">
+                <label for="data" class="rotulo">Data:</label>
+                <input type="date" id="data" name="data" class="entrada">
+            </div>
+
+            <div class="campo">
+                <label for="hora" class="rotulo">Horário:</label>
+                <input type="time" id="hora" name="hora" class="entrada">
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="lugares" class="rotulo">Quantos lugares deseja:</label>
+            <select id="lugares" name="lugares" class="entrada">
                 <option value="">Selecione uma opção</option>
-                <option value="clnico-geral">Duas
-                    pessoas</option>
-                <option value="cardiologia">Quatro pessoas</option>
-                <option value="dermatologia">Família de 10 à 20 pessoas</option>
-                <option value="pediatria">Acompanhado com criança</option>
-                <option value="pediatria">Acompanhante com deficiência</option>
+                <option value="1">1 Pessoa</option>
+                <option value="2">2 Pessoas</option>
+                <option value="4">4 Pessoas</option>
+                <option value="6">6 ou mais pessoas</option>
             </select>
-            <br>
-            <br>
-            <button type="submit">><strong>Confirmar Reserva!</strong></button>
-        </form>
-    </main>
-</body>
+        </div>
+
+        <button type="submit" class="botao-enviar">Confirmar Reserva!</button>
+    </form>
+</section>
 </html>
