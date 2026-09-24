@@ -94,3 +94,104 @@ footer {
     padding: 24px 16px;
     margin-top: 24px;
 }
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.foto {
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.formulario {
+    margin-top: 16px;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.rotulo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #c5a059;
+}
+
+.entrada {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #252525;
+    color: #ffffff;
+}
+
+.botao-enviar {
+    background-color: #c5a059;
+    color: #121212;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Seletor de ID */
+#inicio {
+    padding: 24px 0;
+}
+
+#galeria {
+    padding: 24px 0;
+}
+
+#cardapio {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #333;
+}
+
+#reservas {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #333;
+}
+
+#sobre {
+    padding: 24px 0;
+}
+
+#contato {
+    padding: 24px 0;
+}
+
+/* Fotos usando as imagens de fundo do CSS do mesmo jeito do professor */
+#foto-entrada {
+    background-image: url("entrada.jpg");
+}
+
+#foto-principal {
+    background-image: url("prato-principal.jpg");
+}
+
+#foto-sobremesa {
+    background-image: url("sobremesa.jpg");
+}
