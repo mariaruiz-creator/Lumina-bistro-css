@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Bistrô - Reservas</title>
+</head>
+<body>
+     <img src="watermarked_img_9049578349923323632.jpg" alt="Logo." width="150">
+    <header>
+        <h1>Lumina Bistrô</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="reservas.html">Reservas</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <br>
+    </header>
+
+     <main>
+        <h2>Reserve a sua mesa e aproveita sua experiência!</h2>
+        <form action="#" method="post">
+            <label for="Nome">Nome Completo</label>
+            <input type="text" name="Nome" id="Nome" required>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="telefone">Telefone</label>
+            <input 
+            type="tel" 
+            name="telefone"
+             id="telefone" 
+             required
+             inputmode="numeric"
+             maxlength="15"
+             pattern="(?:\(?[1-9]{2}\)?\s?)?(?:9\d{4}|\d{4})-?\d{4}"
+             title="Digite com DDD. Ex: (17) 98765-4321 ou 179817654321"
+             >
+            <br>
+            <label for="data">Data:</label>
+            <input type="date" name="data" id="data" required>
+            <br>
+            <label for="hora">Horário:</label>
+            <input type="time" name="hora" id="hora" required>
+            <br>
+            <label for="lugares">Quantos lugares deixava:</label>
+            <select name="lugares" id="lugares" required  >
+                <option value="">Selecione uma opção</option>
+                <option value="clnico-geral">Duas
+                    pessoas</option>
+                <option value="cardiologia">Quatro pessoas</option>
+                <option value="dermatologia">Família de 10 à 20 pessoas</option>
+                <option value="pediatria">Acompanhado com criança</option>
+                <option value="pediatria">Acompanhante com deficiência</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit">><strong>Confirmar Reserva!</strong></button>
+        </form>
+    </main>
+</body>
+</html>
