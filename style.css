@@ -1,190 +1,188 @@
-/* Seletor Universal */
+/* ==========================================================================
+   Lumina Bistrô — CSS adaptado com os conceitos do modelo
+   1) Variáveis CSS   2) Unidades de medida   3) Tipografia   4) Animações
+   ========================================================================== */
+
+/* 1) VARIÁVEIS CSS (Cores originais do Lumina Bistrô) */
+:root {
+    --cor-primaria: #c5a059;
+    --cor-primaria-hover: #e0b86c;
+    --cor-fundo: #121212;
+    --cor-superficie: #1a1a1a;
+    --cor-superficie-secundaria: #252525;
+    --cor-texto: #e0e0e0;
+    --cor-texto-destaque: #ffffff;
+    --cor-texto-suave: #888888;
+    --cor-borda: #333333;
+
+    /* 3) TIPOGRAFIA */
+    --fonte-base: 'Poppins', Arial, Helvetica, sans-serif;
+    --fonte-titulo: Georgia, 'Times New Roman', serif;
+
+    /* 4) ANIMAÇÕES */
+    --tempo-transicao: 0.3s;
+    --tempo-lento: 0.5s;
+    --suave: ease;
+    --entrada: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* 2) UNIDADES DE MEDIDA E RESET */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Seletor de TAG */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #e0e0e0;
-    background-color: #121212;
+    font-family: var(--fonte-base);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TIPOGRAFIA E LINKS */
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 12px;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 p {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 a {
     text-decoration: none;
-    color: #c5a059;
+    color: var(--cor-primaria);
     font-weight: bold;
+    transition: color var(--tempo-transicao) var(--suave);
 }
 
+a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* CABEÇALHO E NAVEGAÇÃO (Compatível com seu <header> e <nav>) */
 header {
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #c5a059;
-    color: #ffffff;
-    padding: 32px 16px;
+    background-color: var(--cor-superficie);
+    border-bottom: 2px solid var(--cor-primaria);
+    color: var(--cor-texto-destaque);
+    padding: 2rem 1rem;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 header h1 {
-    color: #c5a059;
+    color: var(--cor-primaria);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
+    animation: entrada-logo 0.8s var(--entrada) both;
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 12px;
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--cor-texto-destaque);
     font-weight: bold;
-    padding: 6px 12px;
+    padding: 0.375rem 0.75rem;
+    border-bottom: 2px solid transparent;
+    transition: color var(--tempo-transicao) var(--suave), border-color var(--tempo-transicao) var(--suave);
 }
 
+nav a:hover {
+    color: var(--cor-primaria);
+    border-bottom-color: var(--cor-primaria);
+}
+
+/* CONTEÚDO PRINCIPAL */
 main {
-    max-width: 960px;
+    width: 100%;
+    max-width: 60rem;
     margin: 0 auto;
-    padding: 32px 16px;
+    padding: 2rem 1rem;
+    flex: 1;
 }
 
+main h2,
+main p {
+    animation: subir 0.9s var(--entrada) both;
+}
+
+main p {
+    animation-delay: 0.15s;
+}
+
+/* TABELAS (Para a página cardapio.html) */
 table {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     border-collapse: collapse;
-    background-color: #1a1a1a;
+    background-color: var(--cor-superficie);
 }
 
 th, td {
-    padding: 10px;
-    border: 1px solid #333;
+    padding: 0.625rem;
+    border: 1px solid var(--cor-borda);
     text-align: left;
 }
 
 th {
-    background-color: #252525;
-    color: #c5a059;
+    background-color: var(--cor-superficie-secundaria);
+    color: var(--cor-primaria);
 }
 
-footer {
-    background-color: #1a1a1a;
-    border-top: 1px solid #333;
-    color: #888888;
-    text-align: center;
-    padding: 24px 16px;
-    margin-top: 24px;
-}
-
-/* Seletor de Classe */
+/* CARDS E FOTOS */
 .card {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.625rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
+    transition: transform var(--tempo-lento) var(--suave), box-shadow var(--tempo-lento) var(--suave);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
 .foto {
-    background-color: #333;
+    background-color: var(--cor-borda);
     background-size: cover;
     background-position: center;
-    height: 180px;
-    border-radius: 10px;
-    margin-bottom: 12px;
+    height: 11.25rem;
+    border-radius: 0.625rem;
+    margin-bottom: 0.75rem;
+    transition: transform 0.8s var(--suave);
 }
 
-.formulario {
-    margin-top: 16px;
+.card:hover .foto {
+    transform: scale(1.03);
 }
 
-.campo {
-    margin-bottom: 16px;
-}
-
-.rotulo {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #c5a059;
-}
-
-.entrada {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #333;
-    border-radius: 10px;
-    font-size: 15px;
-    background-color: #252525;
-    color: #ffffff;
-}
-
-.botao-enviar {
-    background-color: #c5a059;
-    color: #121212;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Seletor de ID */
-#inicio {
-    padding: 24px 0;
-}
-
-#galeria {
-    padding: 24px 0;
-}
-
-#cardapio {
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 24px;
-    border: 1px solid #333;
-}
-
-#reservas {
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 24px;
-    border: 1px solid #333;
-}
-
-#sobre {
-    padding: 24px 0;
-}
-
-#contato {
-    padding: 24px 0;
-}
-
-/* Fotos*/
 #foto-entrada {
     background-image: url("entrada.jpg");
 }
@@ -197,20 +195,38 @@ footer {
     background-image: url("sobremesa.jpg");
 }
 
-/*FORMULÁRIO DE RESERVAS*/
+/* SEÇÕES POR ID */
+#inicio,
+#index,
+#galeria,
+#sobre,
+#contato {
+    padding: 1.5rem 0;
+}
+
+#cardapio,
+#reservas {
+    background-color: var(--cor-superficie);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--cor-borda);
+}
+
+/* FORMULÁRIO DE RESERVAS (Para a página reservas.html) */
 .formulario {
-    max-width: 600px;
-    margin: 20px auto 0 auto;
+    max-width: 37.5rem;
+    margin: 1.25rem auto 0 auto;
 }
 
 .campo {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-align: left;
 }
 
 .campo-duplo {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .campo-duplo .campo {
@@ -219,47 +235,109 @@ footer {
 
 .rotulo {
     display: block;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
-    color: #c5a059;
-    margin-bottom: 8px;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
 }
 
 .entrada {
     width: 100%;
-    padding: 12px 15px;
-    background-color: #121212;
-    border: 1px solid #333333;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 15px;
-    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.375rem;
+    color: var(--cor-texto-destaque);
+    font-family: var(--fonte-base);
+    font-size: 0.9375rem;
+    transition: border-color var(--tempo-transicao) var(--suave);
 }
 
 .entrada:focus {
     outline: none;
-    border-color: #c5a059;
+    border-color: var(--cor-primaria);
 }
 
 .botao-enviar {
     width: 100%;
-    padding: 14px;
-    background-color: #c5a059;
-    color: #121212;
+    padding: 0.875rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 0.375rem;
+    font-family: var(--fonte-base);
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 0.625rem;
+    transition: transform var(--tempo-transicao) var(--suave), background-color var(--tempo-transicao) var(--suave), box-shadow var(--tempo-lento) var(--suave);
 }
 
 .botao-enviar:hover {
-    background-color: #e0b86c;
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(197, 160, 89, 0.3);
 }
 
-/*Seletor Compartilhada*/
-h1, h2, h3 {
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #c5a059;
+.botao-enviar:active {
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--cor-superficie);
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 1.5rem;
+}
+
+/* RESPONSIVIDADE (Telas menores) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .campo-duplo {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* KEYFRAMES E ACESSIBILIDADE */
+@keyframes entrada-logo {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header h1,
+    main h2,
+    main p {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
 }
