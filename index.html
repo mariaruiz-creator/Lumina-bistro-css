@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumina Bistrô - Início</title>
-     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -17,26 +20,68 @@
             <a href="sobre.html">Sobre Nós</a>
             <a href="contato.html">Contato</a>
         </nav>
-        <br>
     </header>
 
-     <main id="index">
-        <h2>
-            <i>Cuidando do seu paladar com elegância e agilidade.</i> 
-        </h2>
-        <p>
-           A <strong>Lumina Bistrô</strong> Bistrô oferece uma experiência gastronômica única com pratos exclusivos, com reserva rápida e simples pela internet.
-        </p>
-        <p>
-            Preencha o formulário de reserva e nossa equipe entrará em contato para confirmar a sua mesa.
-        </p>
-    </main>
+    <main id="index">
+        <!-- Bloco de Apresentação (Flexbox) -->
+        <section class="bloco-destaque">
+            <div class="destaque-texto">
+                <h2>
+                    <i>Cuidando do seu paladar com elegância e agilidade.</i> 
+                </h2>
+                <p>
+                    O <strong>Lumina Bistrô</strong> oferece uma experiência gastronômica única com pratos exclusivos, com reserva rápida e simples pela internet.
+                </p>
+                <p>
+                    Preencha o formulário de reserva e nossa equipe entrará em contato para confirmar a sua mesa.
+                </p>
+                <div class="destaque-botoes">
+                    <a href="reservas.html" class="botao">Fazer Reserva</a>
+                    <a href="cardapio.html" class="botao botao-contorno">Ver Cardápio</a>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>
-            Lumina Bistrô - Sabores extraordinários sob uma nova luz.
-        </p>
-    </footer>
+        <!-- Grade de Cartões (CSS Grid + Flexbox) -->
+        <section id="galeria">
+            <div class="titulo-secao">
+                <h2>Nossas Especialidades</h2>
+                <p>Pratos assinados pelo chef, preparados na hora com ingredientes frescos.</p>
+            </div>
 
-</body>
-</html>
+            <div class="grade-cards">
+                
+                <article class="card">
+                    <div class="card-imagem">
+                        <span class="selo">Mais Pedido</span>
+                        <div class="foto" id="foto-entrada"></div>
+                    </div>
+                    <div class="card-corpo">
+                        <div>
+                            <p class="categoria-prato">Entrada</p>
+                            <h3>Carpaccio Trufado</h3>
+                            <p>Lâminas finas de filé mignon curado, azeite de trufas brancas, lascas de parmesão e rúcula selvagem.</p>
+                        </div>
+                        <div class="card-rodape">
+                            <div class="preco">
+                                <span>porção</span>
+                                R$ 48,00
+                            </div>
+                            <a href="cardapio.html" class="botao">Ver no Cardápio</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-imagem">
+                        <span class="selo">Chef Recomenda</span>
+                        <div class="foto" id="foto-principal"></div>
+                    </div>
+                    <div class="card-corpo">
+                        <div>
+                            <p class="categoria-prato">Prato Principal</p>
+                            <h3>Risoto de Camarão & Limão Siciliano</h3>
+                            <p>Arroz arbóreo cremoso finalizado com camarões grelhados na manteiga de ervas e raspas cítricas.</p>
+                        </div>
+                        <div class="card-rodape">
+                            <div

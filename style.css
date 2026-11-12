@@ -1,9 +1,4 @@
-/* ==========================================================================
-   Lumina Bistrô — CSS adaptado com os conceitos do modelo
-   1) Variáveis CSS   2) Unidades de medida   3) Tipografia   4) Animações
-   ========================================================================== */
-
-/* 1) VARIÁVEIS CSS (Cores originais do Lumina Bistrô) */
+/*  VARIÁVEIS CSS */
 :root {
     --cor-primaria: #c5a059;
     --cor-primaria-hover: #e0b86c;
@@ -15,18 +10,18 @@
     --cor-texto-suave: #888888;
     --cor-borda: #333333;
 
-    /* 3) TIPOGRAFIA */
+    /* TIPOGRAFIA */
     --fonte-base: 'Poppins', Arial, Helvetica, sans-serif;
     --fonte-titulo: Georgia, 'Times New Roman', serif;
 
-    /* 4) ANIMAÇÕES */
+    /* ANIMAÇÕES */
     --tempo-transicao: 0.3s;
     --tempo-lento: 0.5s;
     --suave: ease;
     --entrada: cubic-bezier(0, 0, 0.2, 1);
 }
 
-/* 2) UNIDADES DE MEDIDA E RESET */
+/* UNIDADES DE MEDIDA E RESET */
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -48,7 +43,6 @@ body {
     flex-direction: column;
 }
 
-/* TIPOGRAFIA E LINKS */
 h1, h2, h3 {
     font-family: var(--fonte-titulo);
     color: var(--cor-primaria);
@@ -60,7 +54,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -78,7 +72,7 @@ a:hover {
     color: var(--cor-primaria-hover);
 }
 
-/* CABEÇALHO E NAVEGAÇÃO (Compatível com seu <header> e <nav>) */
+/* CABEÇALHO E NAVEGAÇÃO (Flexbox) */
 header {
     background-color: var(--cor-superficie);
     border-bottom: 2px solid var(--cor-primaria);
@@ -125,16 +119,144 @@ main {
     flex: 1;
 }
 
-main h2,
-main p {
+/* BLOCO DE DESTAQUE (Flexbox) */
+.bloco-destaque {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: 0.625rem;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: subir 0.9s var(--entrada) both;
 }
 
-main p {
-    animation-delay: 0.15s;
+.destaque-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
-/* TABELAS (Para a página cardapio.html) */
+/* BOTÕES */
+.botao {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--cor-primaria);
+    font-size: 0.9375rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--tempo-transicao) var(--suave), background-color var(--tempo-transicao) var(--suave), color var(--tempo-transicao) var(--suave), box-shadow var(--tempo-lento) var(--suave);
+}
+
+.botao:hover {
+    background-color: var(--cor-primaria-hover);
+    border-color: var(--cor-primaria-hover);
+    color: var(--cor-fundo);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(197, 160, 89, 0.3);
+}
+
+.botao:active {
+    transform: scale(0.97);
+    box-shadow: none;
+}
+
+.botao-contorno {
+    background-color: transparent;
+    color: var(--cor-primaria);
+}
+
+.botao-contorno:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+/* GRADE DE CARTÕES (CSS Grid + Flexbox interno) */
+#galeria {
+    padding: 1rem 0;
+}
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform var(--tempo-lento) var(--suave), box-shadow var(--tempo-lento) var(--suave), border-color var(--tempo-transicao) var(--suave);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.foto {
+    background-color: var(--cor-superficie-secundaria);
+    background-size: cover;
+    background-position: center;
+    height: 11.25rem;
+    width: 100%;
+    transition: transform 0.8s var(--suave);
+}
+
+.card:hover .foto {
+    transform: scale(1.05);
+}
+
+#foto-entrada {
+    background-image: url("entrada.jpg");
+}
+
+#foto-principal {
+    background-image: url("prato-principal.jpg");
+}
+
+#foto-sobremesa {
+    background-image: url("sobremesa.jpg");
+}
+
+.card-corpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.card-corpo h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.card-corpo p {
+    font-size: 0.9375rem;
+    color: var(--cor-texto);
+}
+
+.card-rodape {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* TABELAS (Para cardapio.html) */
 table {
     width: 100%;
     margin-bottom: 1rem;
@@ -153,57 +275,7 @@ th {
     color: var(--cor-primaria);
 }
 
-/* CARDS E FOTOS */
-.card {
-    background-color: var(--cor-superficie);
-    border: 1px solid var(--cor-borda);
-    border-radius: 0.625rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    transition: transform var(--tempo-lento) var(--suave), box-shadow var(--tempo-lento) var(--suave);
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-}
-
-.foto {
-    background-color: var(--cor-borda);
-    background-size: cover;
-    background-position: center;
-    height: 11.25rem;
-    border-radius: 0.625rem;
-    margin-bottom: 0.75rem;
-    transition: transform 0.8s var(--suave);
-}
-
-.card:hover .foto {
-    transform: scale(1.03);
-}
-
-#foto-entrada {
-    background-image: url("entrada.jpg");
-}
-
-#foto-principal {
-    background-image: url("prato-principal.jpg");
-}
-
-#foto-sobremesa {
-    background-image: url("sobremesa.jpg");
-}
-
-/* SEÇÕES POR ID */
-#inicio,
-#index,
-#galeria,
-#sobre,
-#contato {
-    padding: 1.5rem 0;
-}
-
+/* FORMULÁRIO DE RESERVAS (Para reservas.html) */
 #cardapio,
 #reservas {
     background-color: var(--cor-superficie);
@@ -213,7 +285,6 @@ th {
     border: 1px solid var(--cor-borda);
 }
 
-/* FORMULÁRIO DE RESERVAS (Para a página reservas.html) */
 .formulario {
     max-width: 37.5rem;
     margin: 1.25rem auto 0 auto;
@@ -279,11 +350,6 @@ th {
     box-shadow: 0 8px 18px rgba(197, 160, 89, 0.3);
 }
 
-.botao-enviar:active {
-    transform: scale(0.97);
-    box-shadow: none;
-}
-
 /* RODAPÉ */
 footer {
     background-color: var(--cor-superficie);
@@ -299,6 +365,10 @@ footer {
     nav {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .grade-cards {
+        grid-template-columns: 1fr;
     }
 
     .campo-duplo {
@@ -332,12 +402,110 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
     header h1,
-    main h2,
-    main p {
+    .bloco-destaque {
         animation: none;
     }
 
     html {
         scroll-behavior: auto;
+    }
+}
+/* ==========================================================================
+   ESTILOS EXTRAS PARA OS CARTÕES DE ESPECIALIDADES
+   ========================================================================== */
+
+.titulo-secao {
+    margin-bottom: 1.5rem;
+}
+
+.titulo-secao h2 {
+    margin-bottom: 0.25rem;
+}
+
+.titulo-secao p {
+    color: var(--cor-texto-suave);
+    margin-bottom: 0;
+}
+
+/* Container da imagem para segurar o selo e cortar o zoom */
+.card-imagem {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Selo flutuante no canto superior direito da foto */
+.selo {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: pulsar 2.4s ease-in-out infinite;
+}
+
+/* Alinhamento interno do texto do card */
+.card-corpo {
+    text-align: left;
+}
+
+.categoria-prato {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+/* Rodapé do card em Flexbox: preço à esquerda e botão à direita */
+.card-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.preco {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--cor-texto-destaque);
+    line-height: 1.1;
+}
+
+.preco span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: var(--cor-texto-suave);
+}
+
+.card-rodape .botao {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .selo {
+        animation: none;
     }
 }
